@@ -1,0 +1,27 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: terraluxe-travel-api
+
+  data:
+    mongodb:
+      # MongoDB connection URI (configured via MONGO_URI environment variable or .env file)
+      uri: ${MONGO_URI:mongodb://localhost:27017/terraluxe_travel_db}
+      auto-index-creation: true
+
+# Swagger / OpenAPI Documentation at http://localhost:8080/swagger-ui.html
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+
+logging:
+  level:
+    root: INFO
+    com.company.app: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
